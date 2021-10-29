@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-project( raytracer CXX )
+project( cpp_project CXX )
 
 # set(CMAKE_CXX_FLAGS "-lpthread -pthread")
 # set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra -pedantic")
@@ -30,12 +30,16 @@ ENABLE_TESTING()
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 ################################################################################
+# EIGEN
+############################################################################
+include_directories(${PROJECT_SOURCE_DIR}/extern/eigen)
+
+################################################################################
 # BUILD TARGETS
 ################################################################################
 include_directories(${PROJECT_SOURCE_DIR}/include)
 add_executable(main src/main.cpp )
 
-# target_link_libraries(main
 ################################################################################
 # Testing example
 ################################################################################
@@ -43,6 +47,7 @@ ENABLE_TESTING()
 
 set(test_all_src 
     tests/test_all.cpp
+    tests/test_eigen.cpp
     tests/test_gtest.cpp)
 
 add_executable(test_all ${test_all_src})
