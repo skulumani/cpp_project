@@ -25,7 +25,7 @@ find_package(OpenMP REQUIRED)
 ################################################################################
 # GOOGLE TESTING
 ################################################################################
-add_subdirectory(${PROJECT_SOURCE_DIR}/extern/googletest/googletest)
+add_subdirectory(${PROJECT_SOURCE_DIR}/extern/googletest)
 ENABLE_TESTING()
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
